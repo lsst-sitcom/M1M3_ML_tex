@@ -15,9 +15,9 @@
 \usepackage{tikz}
 \usepackage[printwatermark]{xwatermark}
 \newsavebox\mybox
-\savebox\mybox{\tikz[color=red,opacity=0.3]\node{\bfseries\sffamily DRAFT};}
-\newwatermark*[allpages,angle=45,scale=8,xpos=-25,ypos=20
-]{\usebox\mybox}
+%\savebox\mybox{\tikz[color=red,opacity=0.3]\node{\bfseries\sffamily DRAFT};}
+%\newwatermark*[allpages,angle=45,scale=8,xpos=-25,ypos=20
+%]{\usebox\mybox}
 
 % These commands are to set up the page, and should be self-evident
 
@@ -81,7 +81,7 @@ M1M3 Optical Testing Results at the UofA Mirror Lab
 \maketitle
 %\newpage
 \begin{abstract}
-  The M1M3 optical testing at the University of Arizona 
+  The M1M3 optical testing at the University of Arizona
   (UofA) Richard F. Caris Mirror Lab has
   been very successful.
 This document describes the analysis results from those testing campaigns.
@@ -125,7 +125,7 @@ repeatible, as we will see from some analysis results we will present
 later in this document.
 
 The analysis has been done in Python notebooks, and documented on
-GitHub \url{https://github.com/bxin/M1M3_ML}.
+GitHub \url{https://github.com/lsst-sitcom/M1M3_ML}.
 The only exception is that some of the real-time analysis, where fast
 turn-around was needed, was done in Matlab. This is because most of
 the analysis done at the M1M3 acceptance, described in document-17171~\cite{m1m3perf},
@@ -137,7 +137,7 @@ Other than holidays, there is no notebook for 1/23 because on that day
 the Mirror Lab crew performed CGH calibration and worked on
 empirical force analysis for fixing the divits above the quads.
 A summary of what tests have been performed for each of the major
-tasks can be found in summary\_by\_task.txt in the GitHub repo. 
+tasks can be found in summary\_by\_task.txt in the GitHub repo.
 
 Other useful background information relevant to the testing include
 \bitm
@@ -150,7 +150,7 @@ Other useful background information relevant to the testing include
 Note that the Mirror Lab also produced a data analysis report for
 these testing campaigns~\cite{m1m3UAreport}. What we describe here in this document is
 complimentary to the Mirror Lab report.
-We do not want to duplicate work. 
+We do not want to duplicate work.
 It should be noted that in a lot of cases, where we have examined the
 Mirror Lab data processing and analysis in detail, and felt that we
 understand everything, we simply use their results, or refer to
@@ -221,7 +221,7 @@ or dual-axis actuator (DAA), the orientation of the secondary
 cylinder, which is also indicated by the arrows in
 Figure.~\ref{fig:actMap}, and the number of pucks for each
 load-spreader.
-The index keys can be found in \url{https://github.com/bxin/M1M3_ML/blob/master/data/LS_CUP_ACTSTYLE_ID.xlsx}.
+The index keys can be found in \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/data/LS_CUP_ACTSTYLE_ID.xlsx}.
 
   \begin{figure}[bthp]
    \begin{center}
@@ -296,7 +296,7 @@ close to optimal, and decided to use that for all subsequent
 measurements.
 
 The analysis in Jupyter Notebook format is found at
-\url{https://github.com/bxin/M1M3_ML/blob/master/190115.ipynb}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190115.ipynb}
 
 \subsection{Number of measurements for averaging}
 
@@ -311,7 +311,7 @@ The idea is that the grand-averages can be used as the ``truth'', and
 we calculate the RMS differences between the sub-averages and the grand-averages.
 Note that the average of the first 10 M1 measurements
 was seen to be very different from the second 10 M1 measurements, so
-we had to use 2 grand-averages for M1. 
+we had to use 2 grand-averages for M1.
 
 The criteria was that we want the noise on the surface measurements in
 RMS to be less than 20 nm. This corresponds to the non-repeatible
@@ -342,7 +342,7 @@ conditions would be slowly drifting.
 
 
 The analysis in Jupyter Notebook format is found at
-\url{https://github.com/bxin/M1M3_ML/blob/master/190115.ipynb}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190115.ipynb}
 
 \section{Repeatability Tests}
 
@@ -382,10 +382,10 @@ M1 reference surface before the repeatability tests.
 
 
 Most of the analysis described in this section is found at
-\url{https://github.com/bxin/M1M3_ML/blob/master/190116.ipynb}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190116.ipynb}
 The only exception is that the removing and reinstalling actuator part
 is in
-\url{https://github.com/bxin/M1M3_ML/blob/master/190221.ipynb}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190221.ipynb}
 
 \subsection{Add low-order bending mode, then remove it}
 \label{sec:repeatB1}
@@ -423,7 +423,7 @@ removed it (left), and the difference from the reference map
 
 Repeating the procedure as described in Section.~\ref{sec:repeatB1}
 with a high order bending mode, 20N RMS of No. 22 in this case, gave
-us results shown in Figure.~\ref{fig:repeatB22}. 
+us results shown in Figure.~\ref{fig:repeatB22}.
 The RMS of the difference map is 17
 nm, which is on the same level as the measurement accuracy.
 
@@ -474,8 +474,8 @@ N RMS of bending mode No. 22.
 \subsection{Lower the mirror, then raise it}
 
 We then lowered the mirror onto its static supports, then raised it,
-reapplied the nominal forces, 
-then remeasured M1 surface. 
+reapplied the nominal forces,
+then remeasured M1 surface.
 The observed RMS difference was 39 nm, as shown in Figure~\ref{fig:lowerRaise}.
 
  \begin{figure}[bthp]
@@ -558,12 +558,12 @@ The actual bending mode measurements took place on 1/16, 1/17, and
 LSST bending modes.
 The corresponding Jupyter Notebooks are
 \bitm
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190116.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190117.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190211.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190213.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190218.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190219.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190116.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190117.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190211.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190213.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190218.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190219.ipynb}
 \eitm
 
 \subsection{FEA bending modes}
@@ -571,7 +571,7 @@ The corresponding Jupyter Notebooks are
 FEA bending modes calculation procedure is given in document-15312~\cite{m1m3bmcalc}.
 Calculating the FEA bending modes is actually a non-trivial process.
 It is important to make sure we get the most accurate results from the
-FE model, because that is what we start with during the testing. 
+FE model, because that is what we start with during the testing.
 
 As
 a quick summary, it involves the following steps.
@@ -607,7 +607,7 @@ a quick summary, it involves the following steps.
       \eeq
       Therefore
       \beq
-      V^\prime = V \Sigma^{-1} 
+      V^\prime = V \Sigma^{-1}
       \eeq
 \enum
 
@@ -654,7 +654,7 @@ the two sets of
 bending modes are a bit different.
 
 For the bending mode measurements, which we will
-talk about next, we started with the Mirror Lab bending modes. 
+talk about next, we started with the Mirror Lab bending modes.
 However, as time went on, it appeared that the LSST bending modes are more effective when used for
 surface optimization.
 In this document, we will mostly focus on the measured LSST bending modes.
@@ -669,7 +669,7 @@ first 22 bending modes. Later on during the surface optimization
 process, it was determined that bending mode No. 27 was needed for
 optimizing the mirror surface.
 We therefore measured modes 1-27.
-This will be discussed in detail later in Section~\ref{sec:finalBM}. 
+This will be discussed in detail later in Section~\ref{sec:finalBM}.
 
  \begin{figure}[bthp]
    \begin{center}
@@ -729,11 +729,11 @@ M1 modes before moving onto the same set of M3 modes.
  GitHub rep would be a good place to look. All the data files are
  included in the data package delievered by the Mirror Lab. The path
  to the files can be found in the Python notebooks.
-      
+
  \begin{figure}[bthp]
    \begin{center}
      \begin{tabular}{c}
-\includegraphics[width=150mm]{figures/m1pmmp.png}      
+\includegraphics[width=150mm]{figures/m1pmmp.png}
   \end{tabular}
    \end{center}
    \caption
@@ -845,7 +845,7 @@ projection onto the column index (right).
 \end{figure}
 
 Because the FEA bending mode are free of measurement noise, and are
-much smoother than the measured modes, we 
+much smoother than the measured modes, we
 choose to apply the scaling factors on the FEA bending modes, and use
 the scaled modes as the baseline bending modes to go onsky.
 
@@ -861,7 +861,7 @@ What the cross talk matrix means, is, mathematically,
 \eeq
 
 $X^T$ is the transpose of the cross-talk matrix $X$.
-m1, m2, ..., m27 are measured mode shapes. U1, U2, ..., U27 are FEA mode shapes. These are all matrix blocks, each is a nNode x 1 vector. nNode is the number of surface nodes. 
+m1, m2, ..., m27 are measured mode shapes. U1, U2, ..., U27 are FEA mode shapes. These are all matrix blocks, each is a nNode x 1 vector. nNode is the number of surface nodes.
 V1, V2, ..., V27 are FEA force sets. These are matrix blocks too, each being a 156 x 1 vector. G is the FEA influence matrix, which is nNode $\times$ 156.
 
 Noticing that when we applied V1, V2, ..., V27 forces in the Mirror Lab, we measured m1, m2, ..., m27. $X^T G$ actually gives us the real influence matrix ($g$).
@@ -886,7 +886,7 @@ Now, what we want to derive is the force sets that would give us U1, U2, ..., U2
 
 So, to know f1, f2, ..., f27, all we need to know is the matrix $m$,
 \beq
-m = (X^T G)^{-1} G = (X^T)^{-1} 
+m = (X^T G)^{-1} G = (X^T)^{-1}
 \eeq
 
 Note that $G$ is a matrix that applies to the matrix blocks
@@ -898,7 +898,7 @@ multiply the $m$ matrix with the $V$ vectors, to get the final $f$
 force vectors which would produce the $U$ bending modes.
 However, attempting to do so resulted in wierd-looking force
 distributions for the bending modes, as shown in the notebook
-\url{https://github.com/bxin/M1M3_ML/blob/master/finalBendingModes.ipynb}.
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/finalBendingModes.ipynb}.
 
 We therefore decided to set all the off-diagonal elements of $m$ to
 zero. This is basically saying that we will ignore the measured
@@ -908,13 +908,13 @@ This is equivalent to using a simple measured scaling factor to scale
 the forces for each bending mode.
 
 The final bending mode forces after the scaling is found at
-\url{https://github.com/bxin/M1M3_ML/blob/master/data/M1M3_1um_156_force.txt}.
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/data/M1M3_1um_156_force.txt}.
 Each row is for an actuator. There are 156 rows in total.
 The first column is the actuator ID. The 2nd and 3rd columns are the x
 and y coordinates of the actuators. The rest of the columns are forces
 for individual bending modes in Newton.
 The bending mode shapes are at
-\url{https://github.com/bxin/M1M3_ML/blob/master/data/M1M3_1um_156_grid.txt}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/data/M1M3_1um_156_grid.txt}
 Each row is for a surface node. There are 5256 rows in total. The
 first column is the node ID. The 2nd and 3rd columns are the x and y
 coordinates in meter for that node. The rest of the columns are for
@@ -976,7 +976,7 @@ The scaled force for the single actuators, which are also the largest
 forces among their own unit-load force sets, are listed in Tables 3
 and 6 of the Mirror Lab analysis report~\cite{m1m3UAreport}, therefore not repeated here.
 Just like for the bending modes, we did $+--+$ measurements;
-and we did 
+and we did
 this for M1 and M3 separately,
 i.e., M1 surface measurements for a series of scaled unit-load forces,
 followed by M3 surface measurements for a series of scaled unit-load
@@ -999,7 +999,7 @@ The third column shows the fit result, i.e., the fitted scale factor
 times the second column.
 The fourth column shows the residual of the fits, scaled to 1N of
 RMS force on the selected actuator.
-The circles indicate the locations of the selected actuator. 
+The circles indicate the locations of the selected actuator.
 Good agreement between the measured influence functions and the FE
 model was seen, in terms of both the magnitude and overall shape.
 The scale factor for actuator 102 was determined to be 0.989, and for
@@ -1015,7 +1015,7 @@ actuator 138 it was 0.988.
        \includegraphics[width=40mm]{figures/if138m.png}
        \includegraphics[width=41mm]{figures/if138f.png}
        \includegraphics[width=40mm]{figures/if138fit.png}
-       \includegraphics[width=41mm]{figures/if138r.png} 
+       \includegraphics[width=41mm]{figures/if138r.png}
   \end{tabular}
    \end{center}
    \caption
@@ -1036,7 +1036,7 @@ around the selected actuator positions. But the locality is much less pronounced
 
 Note that the single actuator measurements were done only
 using the Mirror Lab FEA influence functions.
-Since we do not use the results presented in this section in any 
+Since we do not use the results presented in this section in any
 quantitative calibration of the FE model or the final bending modes,
 we did not make comparions between the Mirror Lab FEA influence
 functions and those derived from the LSST FE model, nor the force
@@ -1059,10 +1059,10 @@ All results in this section show consistent agreement between the FEA single act
 influence functions and those measured for the real mirror.
 The detailed analysis in Jupyter Notebook format is documented in
 \bitm
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190118.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190122.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190214.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190218.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190118.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190122.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190214.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190218.ipynb}
   \eitm
 
 \section{Surface optimization}
@@ -1077,10 +1077,10 @@ that we had to do to get there.
 \bnum
 \item M1M3 global optimization
 \item use of LSST bending modes
-  \item correct calculation of the initial forces 
+  \item correct calculation of the initial forces
   \item understanding the divits above the quads
     \item undertanding the absolute offset in actuator forces
-  \item use of bending modes up to 27 
+  \item use of bending modes up to 27
 \enum
 
 No 1 and 2 above are the eaisest to explain. We describe them here in
@@ -1106,8 +1106,8 @@ bending modes a try. The LSST bending modes appeared to be
 more effective while used in these optimizations. They resulted in
 somewhat better surfaces, and the convergence toward better surfaces
 were noticeably faster.
-We do not think the LSST bending modes are inherently superior in any  
-way.  
+We do not think the LSST bending modes are inherently superior in any
+way.
 As we mentioned earilier, we believe the bending mode derivations are
 identical between LSST and the Mirror Lab. So the difference in these
 two sets of bending modes most likely reside in the two different FE
@@ -1129,7 +1129,7 @@ account.
 This calculation may sound trivial - starting from the 2014 forces,
 one simply removes the weights of the Mirror Lab hardware which had been removed
 since then, and add the new LSST hardware weights.
-Based on that, we put together a Notebook - \url{https://github.com/bxin/M1M3_ML/blob/master/sec3.2InitialForces.ipynb}.
+Based on that, we put together a Notebook - \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/sec3.2InitialForces.ipynb}.
 However, this is not as simple as one might first think, mostly
 because the Mirror Lab actuators were all SAAs, while most of the LSST
 actuators are DAAs. With the secondary cylinders of the DAAs oriented at
@@ -1138,11 +1138,11 @@ forces on the secondary cylinder, to keep the primary cylinder at
 vertical position, just like when the DAAs are free-standing.
 The actual mathematical derivation of the initial force set is rather tedious,
 therefore not documented here. Instead, they are found in a separate
-document, 
+document,
 Document-32192~\cite{m1m3initF}.
 That document also gives analytical results for off-zenith
 pointings. These will need to become part of the M1M3 look-up-table (LUT).
-The numerical calculations are found here - \url{https://github.com/bxin/M1M3_ML/blob/master/sec4.3InitialForces.ipynb}.
+The numerical calculations are found here - \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/sec4.3InitialForces.ipynb}.
 
 
 \subsection{Divits above the quads}
@@ -1156,9 +1156,9 @@ Figure~\ref{fig:divits} shows the optimized M1 and M3 surface together from
 an optimization on 2/12. This particular optimization was done using
 the Mirror Lab bending modes, and was an M1M3 global
 optimization. Four dark blue spots can be clearly seen on top of the quads.
-See \url{https://github.com/bxin/M1M3_ML/blob/master/190212.ipynb} for
+See \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190212.ipynb} for
 more details.
-  
+
  \begin{figure}[bthp]
    \begin{center}
      \begin{tabular}{c}
@@ -1175,7 +1175,7 @@ more details.
 
 
 Our first reaction was that there is some kind of force offset that
-was not properly accounted for. And, irregardly of the reason, just 
+was not properly accounted for. And, irregardly of the reason, just
 bumpimg up the forces on the quads should fix it.
 It turned out that simply increasing the forces on the four quads
 didn't work out very well.
@@ -1187,8 +1187,8 @@ Figure~\ref{fig:quadsUp} shows the M1M3 surface we got by adding 350N to the out
      bending modes.
      The divits seem to be less visible, but the overall RMS on M1 and
      on M3 did not get better, as shown in the titles of these plots.
-   This is also found in \url{https://github.com/bxin/M1M3_ML/blob/master/190212.ipynb}.
-     
+   This is also found in \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190212.ipynb}.
+
  \begin{figure}[bthp]
    \begin{center}
      \begin{tabular}{c}
@@ -1268,7 +1268,7 @@ shows the best surface we could possibly get by adjusting all the
 actuators. The surface RMS values are small, but the pattern on the
 surface is still visbble. So this is higher spatial frequency than the
 actuators can create or compensate.
-More details are found in \url{https://github.com/bxin/M1M3_ML/blob/master/190212.ipynb}.
+More details are found in \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190212.ipynb}.
 
  \begin{figure}[bthp]
    \begin{center}
@@ -1357,7 +1357,7 @@ way they are.
  After understanding the root cause for the divits on top of the
  quads, it became obvious why we could not further improve the surfaces by
  adjusting actuator forces.
- 
+
  As the final push for better surfaces, we ran another round of
  optimization on the last day of test campaign No. 2, by making a fit
  to the measured M1M3 surfaces using 14 single actuator influence
@@ -1370,7 +1370,7 @@ way they are.
  After two iterations, the fit to the 14 influence functions yielded
  forces that were close to zero.
 
- 
+
  Looking back at the entire surface optimization process, a few times
  we got to, or got close to, the best optimized M1 and M3 surfaces.
  \bitm
@@ -1405,11 +1405,11 @@ way they are.
   shown in Figure~\ref{fig:optS}. The differences between them are small.
   These are also documented in
   \bitm
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190125.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190214.ipynb}
-\item \url{https://github.com/bxin/M1M3_ML/blob/master/190221.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190125.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190214.ipynb}
+\item \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190221.ipynb}
   \eitm
-  
+
  \begin{figure}[bthp]
    \begin{center}
      \begin{tabular}{c}
@@ -1449,7 +1449,7 @@ We also compare to three other curves as references:
 For both mirrors we are meeting the SF specifications.
 For M1, the SF increased pretty uniformly across the spectrum. This is true for both the specification curves and the measured SF. For M3, the increase in the measured SF is much more significant in the range roughly between 0.05m and 0.5m. At one point ($\sim$0.1m separation) it is basically touching the specification curve.
 
- 
+
  \begin{figure}[bthp]
    \begin{center}
      \begin{tabular}{c}
@@ -1463,7 +1463,7 @@ For M1, the SF increased pretty uniformly across the spectrum. This is true for 
      polished surfaces, and their corresponding specifications.
  }
 \end{figure}
- 
+
  \subsection{Image Quality Evaluation}
 
  We took the M1M3
@@ -1489,7 +1489,7 @@ Therefore, $\Delta$ has contributions from both the mirror surport
 system and thermal factors.
 When we do the subtraction between two rows, we take the ratio of the
 PSSN values, then convert the resulting PSSN into $\Delta m_5$ and
-effective FWHM ($FWHM_{\rm eff}$). 
+effective FWHM ($FWHM_{\rm eff}$).
 The subtraction of FWHM is done by subtracting in quadrature.
 
 The numbers in the parentheses are image quality budgets in FWHM.
@@ -1502,13 +1502,13 @@ and 84mas for M3 thermal.
 If we use these values then we get 109mas for the quadrature sum.
 We left out the 10 mas budget for M1M3 vibration, since no cooling
     fans were installed.
-    
+
 \begin{table}[bpt]
 %\small
 %\footnotesize
 \caption{Summary of PSSN,  $\Delta m_5$,  $FWHM_{\rm eff}$ and $FWHM$ for various
-optical configurations of the M1M3. 
-All numbers shown are GQ values across the 
+optical configurations of the M1M3.
+All numbers shown are GQ values across the
 31 field points as defined in Ref.~\cite{m1m3perf}.
 The numbers in the the parentheses are image quality budgets in FWHM.}
 %\tabcolsep=0.11cm
@@ -1539,7 +1539,7 @@ At that point we decided to include bending mode 27 in the surface
 optimizations. And we measured bending modes up to No. 27, for both
 the Mirror Lab bending modes and the LSST bending modes.
 
-Now the question is,  
+Now the question is,
 do we need bending mode 27 for AOS closed-loop?
 Ref.~\cite{m1m3bm27} attempts to address this question, by looking through
 the entire surface optimization - under what circumstances did we need
@@ -1593,7 +1593,7 @@ These were due to temperature drifts.
 Considering that when we do this on the summit the temperate profile
 will be different anyway, we take the average of $fb$, $fc$, and $fd$,
 and use it as the final zenith-pointing LUT.
-The analysis is documented in \url{https://github.com/bxin/M1M3_ML/blob/master/finalLUT.ipynb}.
+The analysis is documented in \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/finalLUT.ipynb}.
 
 To extend the LUT to off zenith, we need to combine the optimal forces
 at zenith and those at horizon. The optimal forces at an arbituary
@@ -1624,7 +1624,7 @@ models a perfectly polished mirror, so there is no $F_B$ needed, and
 the FEA doesn't know anything about $F_a$.
 
 The notebook
-\url{https://github.com/bxin/M1M3_ML/blob/master/get_Fxyz_from_EFD_190125.ipynb}
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/get_Fxyz_from_EFD_190125.ipynb}
 illustrates the different components of the forces at zenith, as
 defined by the M1M3 control software, in the order they were added
 during the testing,
@@ -1669,22 +1669,22 @@ F_B = C+E.
 
 On the other hand, the M1M3 control software publishes the force
 values and their components as part of the telemetry, at a frequency
-of 50 Hz. These are captured by the 
+of 50 Hz. These are captured by the
 EFD.
 The relevant data tables are
 \bitm
 \item K1 = D = $m1m3\_logevent\_AppliedBalanceForces$
 \item K2 = C = $m1m3\_logevent\_AppliedStaticForces$
 \item K3 = E = $m1m3\_logevent\_AppliedActiveOpticForces$
-\item K = A+B+C+D+E+F = $m1m3\_logevent\_AppliedForces$  or \\$m1m3\_logevent\_AppliedCylinderForces$  
+\item K = A+B+C+D+E+F = $m1m3\_logevent\_AppliedForces$  or \\$m1m3\_logevent\_AppliedCylinderForces$
   \eitm
   Therefore,
   \beq
   F_G(\theta_z=0) = A+F = K-B-C-D-E
   \eeq
-  
+
 The notebook
-\url{https://github.com/bxin/M1M3_ML/blob/master/finalLUT.ipynb} shows
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/finalLUT.ipynb} shows
 the numerical derivation of the LUT. The results are duplicated in
 Figure~\ref{fig:LUT}. Once we've done the M3 horizon testing on the
 summit, we will simply replace the FEA-predicted $F_{Gh}$ with
@@ -1712,16 +1712,16 @@ summarized as
 \item The y-force has 3 components: slewing (400N), dynamics (5\% of
   total), and LUT (the rest);
   \item The x-force has 2 components: slewing (600N), dynamics (5\% of
-    total). Yes, the remaining budget is unaccounted for. 
+    total). Yes, the remaining budget is unaccounted for.
   \eitm
   We note that the forces calculated in this section all go into the
-  ``rest'' category. For the x-forces, 
+  ``rest'' category. For the x-forces,
     Figure~\ref{fig:LUT} (left) shows we need nonzero, but small x
     forces in the LUT. The assumption is that these allocations are
-    just guidelines, which will 
-    not be strictly enforced by the control software. 
+    just guidelines, which will
+    not be strictly enforced by the control software.
     Therefore, the x-force budget above does not have a LUT component.
-    
+
 \section{Horizon tests}
 \label{sec:horizon}
 
@@ -1821,12 +1821,12 @@ Most likely Ed did the optimization early on using
 Figure~\ref{fig:horizonS} shows results from this test.
 The measured horizon bending shape and the FEA-predicted horizon
 bending shape are shown. After making the fit to the measured horizon
-shape using the FEA 
+shape using the FEA
 predicted shape, the scaling factor, which is the ratio between
 measured and FEA prediction, was found to be 1.039.
 Note that this shape is largely made of coma, i.e., bending mode
 No. 7. For earlier results, the scaling factor for bending mode No. 7
-was found to be 1.032. 
+was found to be 1.032.
 
  \begin{figure}[bthp]
    \begin{center}
@@ -1847,7 +1847,7 @@ measured and FEA prediction, is found to be 1.039.
 
 
   \subsection{Inferring M1 shape from M3 measurements}
-  
+
 For M1M3 horizon test on the summit, the plan has always been to test
 M3 only, because M1 radius of curvature will not be accessible.
 However, the horizon optimized forces $F_{Gh}$ should optimize M1 and
@@ -1882,7 +1882,7 @@ Document-32377~\cite{inferm1p1} and 32378~\cite{inferm1p2}.
 The basic conclusion was that
 inferring M1 shape from M3 measurements works for low order bending modes ($\sim<$15), not high order one.
 
-As documented in \url{https://github.com/bxin/M1M3_ML/blob/master/190221.ipynb},
+As documented in \url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/190221.ipynb},
 in the Mirror Lab, we started with 500nm of horizon deformation (about
 1/4 of the inverse of the horizon gravitational sag), which is largely
 y-coma, and by keeping the first 15 singular values in the SVD the M3-only
@@ -1898,7 +1898,7 @@ We know we cannot correct that. Modes 1-15
 gives 481nm.
 $\sqrt{481^2+148^2}=500$nm.
 The high spatial order components are simply there, and we know we
-cannot do anything about it. So we choose to 
+cannot do anything about it. So we choose to
  filter out the high order modes with data processing, specifically,
  when we try to infer all 156 forces using M3 measurements.
 \item
@@ -1922,7 +1922,7 @@ shapes as they are derived from the FE analysis.
 
 Since we only correct low order modes, we do not really need the high
 spatial resolution provided by the interferometer. In that sense, a SH
-would be good enough. 
+would be good enough.
 
 \section{Actuator Force Error}
 \label{sec:ferror}
@@ -1939,7 +1939,7 @@ target force values. For example, there may be a lack of air pressure, problems
 with the control valves, or just simply a glass safty limit.
 
 In the analysis documented by
-\url{https://github.com/bxin/M1M3_ML/blob/master/ForceError.ipynb},
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/ForceError.ipynb},
 we looked at actuator force differences within three 4-minute
 periods. These were from three different days during test campaign
 No. 1.
@@ -1990,7 +1990,7 @@ To answer that question, we looked at the same kind of histograms,
 like those shown in Figure~\ref{fig:forceError}, by actuator.
 There are too many (N=156, for the z-forces) such histograms. We do not
 reproduce them here. Instead, the reader is referred to the notebook
-\url{https://github.com/bxin/M1M3_ML/blob/master/ForceError.ipynb}.
+\url{https://github.com/lsst-sitcom/M1M3_ML/blob/master/ForceError.ipynb}.
 The conclusion there is that, indeed, the force errors for individual
 actuators are mostly repeatable. The non-repeatable errors, as shown
 by the width of the histograms, are negligible. LTS-88~\cite{lts88}
@@ -2033,7 +2033,7 @@ indeed below its image quality allocation.
 
 As we pointed out in Section~\ref{sec:intro}, the performance of the
 EFD left a lot to be improved.
-While the EFD was 
+While the EFD was
 supposed to capture all the telemetry, events, and commands as
 published by the M1M3 control software,
 the actual performance, as indicated by the the capturing rate of the
@@ -2079,7 +2079,7 @@ plan was to measure vibration when the cooling fans are turned
 on. This was not done due to problems turning on the cooling fans. But
 this was designed as an optional test from the very beginning.
 
-These testing campaigns are the 
+These testing campaigns are the
 first step in building up our understanding of the entire LSST optical system.
 Once the system is reassembled in Chile, with the surrogate mirror
 instead of the real glass mirror, a portion of these tests will be
